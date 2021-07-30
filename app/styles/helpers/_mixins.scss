@@ -1,0 +1,129 @@
+// width, height
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+// positionCenter
+@mixin positionCenter($direction: left, $tfs: -50%, $position: absolute) {
+	position: $position;
+	transform: translate3d(-50%, 0, 0);
+	#{$direction}: 50%;
+
+	@if $direction== 'both' {
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, $tfs, 0);
+	}
+}
+
+// background color
+@mixin bg($bgclr: $primary-color, $color: $secondary-color) {
+	background: $bgclr;
+	color: $color;
+	a {
+		color: $color;
+	}
+}
+
+@mixin fzClr($size, $subSize, $color) {
+	color: $color;
+	font-size: $size + $subSize;
+}
+
+// max Width
+// breakpoint : diem dung
+@mixin maxWidth($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+// min Width
+@mixin minWidth($breakpoint) {
+	@media screen and (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+// min max Width
+@mixin minMaxWidth($breakpoint-min, $breakpoint-max) {
+	@media (min-width: $breakpoint-min) and (max-width: $breakpoint-max) {
+		@content;
+	}
+}
+
+// FlexBox
+@mixin flexBox(
+	$align-items: stretch,
+	$justify-content: flex-start,
+	$direction: row,
+	$flex: flex,
+	$wrap: nowrap
+) {
+	display: flex;
+	align-items: $align-items;
+	justify-content: $justify-content;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+
+// hide scroll
+@mixin hideScroll() {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+// text clamp
+@mixin textClamp($rows: 1, $size: 100%) {
+	display: -webkit-box;
+	-webkit-line-clamp: $rows;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	// ....
+	text-overflow: ellipsis;
+	width: $size;
+	max-width: $size;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+@mixin touchSlider($width: 80%, $gap: 2.5rem, $padding: 1rem) {
+	display: grid !important;
+	justify-content: flex-start !important;
+	grid-template-columns: unset;
+	grid-auto-flow: column;
+	grid-auto-columns: $width;
+	grid-gap: 0 $gap;
+	overflow-x: auto;
+	padding: $padding;
+	scroll-snap-type: x mandatory;
+	scroll-snap-stop: always;
+	@include hideScroll;
+
+	& > * {
+		scroll-snap-align: center;
+		width: auto;
+	}
+}
+
+@mixin animationSlider($delay: 4.8s, $duration: 1.5s, $name: 'runY') {
+	animation: $name $duration cubic-bezier(0.51, 0.24, 0.91, 0.6);
+	animation-delay: $delay;
+	@keyframes #{$name} {
+		0% {
+			transform: translateY(50%);
+			opacity: 0;
+		}
+		50% {
+			transform: translateY(40%);
+		}
+		100% {
+			transform: translateY(0);
+		}
+		@content;
+	}
+}

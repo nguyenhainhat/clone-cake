@@ -1,0 +1,210 @@
+.col-12,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-md-10,
+.col-md-3,
+.col-md-4,
+.col-md-6,
+.col-md-8,
+.col-md-9,
+.col-sm-10,
+.col-sm-4,
+.col-sm-6,
+.col-sm-8,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6 {
+	position: relative;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+$column: 12;
+
+$grid-breakpoint: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+);
+
+@each $breakpoint in map-keys($grid-breakpoint) {
+	$size: map-get(
+		$map: $grid-breakpoint,
+		$key: $breakpoint,
+	);
+	@include minWidth($size) {
+		@for $i from 1 through $column {
+			.col-#{$breakpoint}-#{$i} {
+				flex: 0 0 auto;
+				width: (100% / ($column / $i));
+			}
+		}
+	}
+}
+
+$borderBtnColor: (
+	default: #f9f9ff,
+	primary: #140c40,
+	success: #4cd3e3,
+	info: #38a4ff,
+	warning: #f4e700,
+	danger: #f44a40,
+	link: #f9f9ff,
+	empty: #f9f9ff,
+);
+
+@each $nameClr, $colors in $borderBtnColor {
+	.#{$nameClr} {
+		background-color: $colors;
+		color: $secondary-color;
+		border: 1px solid currentColor;
+		@if $nameClr == link {
+			text-decoration: underline;
+			color: #140c40;
+			border: unset;
+		} @else if $nameClr == default {
+			color: #415094;
+			border: 1px solid $colors;
+		} @else if $nameClr == empty {
+			cursor: no-drop;
+		}
+	}
+	.#{$nameClr}-border {
+		color: $colors;
+		border: 1px solid currentColor;
+		transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		@if $nameClr == link {
+			text-decoration: underline;
+			color: #140c40;
+			border: unset;
+		} @else if $nameClr == default {
+			border: 1px solid transparent;
+			&:hover {
+				color: #415094 !important;
+			}
+		} @else if $nameClr == empty {
+			&:hover {
+				cursor: no-drop;
+			}
+		} @else {
+			&:hover {
+				color: $secondary-color;
+				background-color: $colors;
+				transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+		}
+	}
+}
+
+$borderRarius: (
+	first: unset,
+	primary: unset,
+	secondary: 5px,
+	third: 20px,
+	fourth: 20px,
+);
+
+$btnPos: (top, bottom);
+
+@each $nameBtns, $size in $borderRarius {
+	@each $nameBtn in $btnPos {
+		.blog-btns_#{$nameBtns} .blog-btns_#{$nameBtn} > .blog-btns_items {
+			border-radius: $size;
+			padding: 1rem 3rem;
+			@if $nameBtns == fourth {
+				padding: 2rem;
+			}
+		}
+	}
+}
+
+$tableListWidth: (
+	serial: 8,
+	countries: 3.5,
+	visits: 5,
+	percentages: 2.5,
+);
+
+$tableName: (head, row);
+
+@each $nameWidthTable, $sizeWidthTable in $tableListWidth {
+	@each $namesTable in $tableName {
+		.blog-table_#{$namesTable} {
+			border-bottom: 1px solid #dfe0e2;
+			padding: 2rem 3rem;
+			@include flexBox(stretch, stretch);
+			.blog-table_#{$nameWidthTable} {
+				min-width: calc(100% / #{$sizeWidthTable});
+				@include fzClr($text-font, 0, $text-color);
+			}
+		}
+	}
+}
+
+$colorPercenTable: (
+	1: #6382e6,
+	2: #6382e6,
+	3: #e66686,
+	4: #f09359,
+	5: #73fbaf,
+	6: #73fbaf,
+	7: #6382e6,
+	8: #a367e7,
+	9: #e66686,
+);
+
+$items-table: 9;
+
+@for $i from 1 through $items-table {
+	@each $count, $colorPercen in $colorPercenTable {
+		@if $i == $count {
+			.blog-table_row:nth-child(#{$i}) .blog-table-width {
+				background-color: #{$colorPercen};
+				display: inline-block;
+				@if $count % 2 == 0 {
+					@include size(calc(100% / (#{$i} + 1)), 5px);
+				} @else {
+					@include size(calc(100% / (#{$i} - 1)), 5px);
+				}
+			}
+		}
+	}
+}
+
+$colorSwitches: (
+	2: #6382e6,
+	3: #e66686,
+	4: #f09359,
+	5: #f09359,
+);
+
+$items-switches: 5;
+
+@for $i from 2 to $items-switches {
+	@each $countSwitches, $color in $colorSwitches {
+		@if $i == $countSwitches {
+			.blog-switches_items:nth-child(#{$countSwitches})
+				input:checked
+				+ label::after {
+				background-color: $color !important;
+			}
+			.blog-switches_items:nth-child(#{$countSwitches})
+				input:checked
+				+ label::before {
+				transform: translate3d(100%, -55%, 10px) !important;
+			}
+		}
+	}
+}

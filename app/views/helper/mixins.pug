@@ -1,0 +1,185 @@
+mixin sectionCaption(caption, title)
+  .section-caption
+    .section-title
+      h3= caption
+      h2= title
+
+mixin listNavbar(name,link="#!")
+  li.header-items
+    a.header-link(href=link)= name
+    if name == 'Blog'
+      ul.header-blog
+        li
+          a.header-blog_list(href="blog.html") Blog
+        li
+          a.header-blog_list(href="blogDetails.html") Blog Detail
+        li
+          a.header-blog_list(href="blogEml.html") Element
+
+mixin sliderContent(data)
+  .slider-content
+    .slider-caption
+      h2.slider-title= data.title
+    h1= data.caption
+    if(data.desc)
+      p= data.desc
+      .btn.btn-slider
+        a(href="#!") Explore Menu
+  .slider-sub 
+    img(src= data.imgSub, alt="")
+
+mixin sliderComponents(data)
+  section.slider#slider-components
+    .slider-container 
+      .container 
+        .row
+          .slider-content
+            .slider-caption
+              h2.slider-title= data.title
+            h1= data.caption
+          .slider-sub 
+            img(src= data.imgSub, alt="")
+
+mixin popularItems(data)
+  .popular-items 
+    .popular-img
+      img(src= data.img, alt= data.alt)
+    .popular-desc
+      h4.popular-title= data.title
+      p Land behold it created good saw after she'd our set.
+    a(href="#!").btn.popular-btn= data.btn   
+
+mixin ourItems(src, caption= "Pet Boarding", title= "consectetur adipiscing elit, serfd dgo eiusmod tempor incididunt ut ore et dolore magna aliqua." )
+  .col-sm-12.col-md-6.col-lg-4
+    .our-items
+      .our-icon
+        img(src= src)
+      .our-content
+        h5
+          a(href= "#!")= caption
+        p= title 
+
+mixin testiItems(src, name= "Oliva jems", job= "UIX designer", title= '"Leather detail shoulder contrastic colour contour stunning silhouette working peplum. Statement buttons cover-up tweaks patch.')
+  .testi-items
+    p.testi-title= title
+    .testi-person
+      img(src= src)
+      .testi-inf
+        span= name
+        p= job
+
+mixin owlItem(src, href= "#!")      
+  .owl-items
+    img(src= src)
+    .owl-social
+      a(href= href)
+        i.fab(class=attributes.class)
+
+mixin blogItems(src, date= '15', month= 'Jan', user= 'Travel, Lifestyle', cmt= '03 Comments', title= "Google inks pact for new 35-storey office" ,desc= "That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.")
+  .blog-items
+    .blog-img
+      img(src= src)
+      a(href ="#!").blog-date
+        h3= date
+        p= month
+    .blog-content
+      h2
+        a(href="#!")= title
+      p= desc
+      ul.blog-inf
+        li
+          a(href="#!")= user
+            i.fas.fa-user
+        li
+          a(href="#!")= cmt
+            i.fas.fa-comments
+
+mixin blogForm(name, title)
+  form.blog-form_control
+    input(type=text placeholder= name).blog-form_input
+    if name == "Search Keyword"
+      button.btn.blog-form_btn
+        i.fas.fa-search
+  button.btn.btn-form 
+    a(href="#!")= title
+
+mixin blogCategoryList(item, number)
+  li.blog-category_list
+    a(href= "#!").blog-category_link
+      p= item
+      p= number
+
+mixin blogPostList(src, caption, date)
+  li.blog-post_list
+    img(src= src)
+    .blog-post_content
+      h3 
+        a(href="#!")= caption
+      p= date
+
+mixin blogTagList(title)
+  li.blog-tag_list
+    a(href="#!").blog-tag_link= title
+
+mixin blogFeedList(src)
+  li.blog-feed_list
+    a(href="#!")
+      img(src= src).blog-feed_img 
+
+mixin blogCmtList(src, name= "Emilly Blunt", date= "December 4, 2017 at 3:12 pm", btn= "Reply", desc= "Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser")
+  .blog-cmt_list
+    img(src= src)
+    .blog-cmt_desc
+      p= desc
+      .blog-cmt_inf
+        h5 
+          a(href="#!")= name
+        p= date
+        .blog-cmt_date
+          a(href="#!").blog-cmt_reply= btn
+
+mixin blogBtn()
+  .blog-btns_top
+    a(href="#!").blog-btns_items.default Default
+    a(href="#!").blog-btns_items.primary Primary
+    a(href="#!").blog-btns_items.success Success
+    a(href="#!").blog-btns_items.info Info
+    a(href="#!").blog-btns_items.warning Warning
+    a(href="#!").blog-btns_items.danger Danger
+    a(href="#!").blog-btns_items.link Link
+    a(href="#!").blog-btns_items.empty Disable
+  .blog-btns_bottom
+    a(href="#!").blog-btns_items.default-border Default
+    a(href="#!").blog-btns_items.primary-border Primary
+    a(href="#!").blog-btns_items.success-border Success
+    a(href="#!").blog-btns_items.info-border Info
+    a(href="#!").blog-btns_items.warning-border Warning
+    a(href="#!").blog-btns_items.danger-border Danger
+    a(href="#!").blog-btns_items.link-border Link
+    a(href="#!").blog-btns_items.empty-border 
+
+      .blog-definition_items
+      .blog-definition_items
+
+
+      .blog-definition_items
+
+mixin blogDefinitionItems(caption= "Definition 01", desc= "Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks")
+  h4= caption
+  p= desc
+
+mixin blogTableList(data)    
+  .blog-table_serial= data.serial
+  .blog-table_countries= data.countries
+    img(src= data.img)
+  .blog-table_visits= data.visits
+  .blog-table_percentages= data.percentages 
+    .blog-table-width
+
+      .contact-right_items
+mixin contactRightItems(title,desc)
+  .contact-right_items.blog-right_js
+    i.fas(class=attributes.class)
+    .contact-right_content
+      h3= title
+      p= desc 

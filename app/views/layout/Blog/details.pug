@@ -1,0 +1,138 @@
++sliderComponents({
+  title: 'Delicious', 
+  caption: 'Blog Details',
+  imgSub: "../images/Home/bg-sub.webp"
+})
+
+section.blog#blog-detail.section-padding
+  .container
+    .row
+      .col-lg-8.col-sm-12
+        .blog-left
+          .blog-items
+            .blog-img
+              img(src= "./images/Blog/blog-1.webp")
+            h2 Second divided from form fish beast made every of seas all gathered us saying he our
+            ul.blog-inf
+              li
+                a(href="#!")  Travel, Lifestyle
+                  i.fas.fa-user
+              li
+                a(href="#!")  03 Comments
+                  i.fas.fa-comments  
+            p MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower
+            p MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually
+            .blog-quote
+              .blog-quote_items
+                p MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training.
+            p MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower
+            p MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually
+          .blog-navigation.blog-left_js
+            .blog-navigation_item
+              .blog-navigation_inf
+                i.fas.fa-heart
+                p Lily and 4 people like this
+              .blog-navigation_link
+                a(href="#!")
+                  i.fab.fa-facebook-f
+                a(href="#!")
+                  i.fab.fa-twitter
+                a(href="#!")
+                  i.fas.fa-basketball-ball   
+                a(href="#!")
+                  i.fab.fa-behance
+            .blog-navigation_post
+              .blog-navigation_left
+                .blog-navigation_img
+                  img(src="./images/Blog/post-1.webp")
+                  i.fas.fa-arrow-left
+                .blog-navigation_title
+                  p Prev Post
+                  h4 
+                    a(href="#!") Space The Final Frontier
+              .blog-navigation_right
+                .blog-navigation_img
+                  img(src="./images/Blog/post-2.webp")
+                  i.fas.fa-arrow-right
+                .blog-navigation_title
+                  p Next Post
+                  h4 
+                    a(href="#!") 101 Telescopes
+          .blog-author.blog-left_js
+            .blog-author_content
+              .blog-author_inf
+                img(src="./images/Blog/author.webp")
+              .blog-author_desc
+                h4
+                  a(href="#!") Harvard milan
+                p Second divided from form fish beast made. Every of seas all gathered use saying you're, he our dominion twon Second divided from
+          .blog-cmt.blog-left_js
+            h4 05 Comments
+            +blogCmtList("./images/Blog/comment_1.webp")
+            +blogCmtList("./images/Blog/comment_2.webp")
+            +blogCmtList("./images/Blog/comment_3.webp")
+          .blog-detail_leave.blog-left_js
+            .row
+              .col-12
+                .section-title
+                  h4 Leave a Reply
+            form.form
+              .col-12  
+                .form-group
+                  textarea(placeholder= "Write Comment",cols = "30", rows= "9", name= "comment",  data-validation-required-message= "Please Enter Comment").form-items.col-sm-12
+              .col-12
+                .form-inf
+                  .form-group
+                    input(type= "text" name= "name", placeholder= "Name" data-validation-required-message= "Please Enter Name").form-items.col-sm-6
+                  .form-group
+                    input(type = "email" name= "email", placeholder= "Email" data-validation-required-message= "Please Enter Email").form-items.col-sm-6
+              .col-12
+                .form-group
+                  input(type = "text", name= "website", placeholder= "Website" data-validation-required-message= "Please Enter Website").form-items.col-sm-12
+              .col-12
+                 button.btn.btn-form.w-auto
+                  a(href="#!") Post Comment
+      .col-lg-4.col-sm-12
+        .blog-right
+          .blog-form.blog-right_js
+            +blogForm('Search Keyword', 'Search')
+          .blog-category.blog-right_js
+            h4 Category
+            ul
+              +blogCategoryList('Resaurant food', '(37)')
+              +blogCategoryList('Travel news', '(10)')
+              +blogCategoryList('Modern technology', '(03)')
+              +blogCategoryList('Product', '(11)')
+              +blogCategoryList('Inspiration', '(21)')
+              +blogCategoryList('Health Care', '(21)')
+          .blog-post.blog-right_js
+            h4 Recent Post
+            ul
+              +blogPostList('./images/Blog/blog-post-1.webp', 'From life was you fish...', 'January 12, 2019')
+              +blogPostList('./images/Blog/blog-post-2.webp', 'The Amazing Hubble', '02 Hours ago')
+              +blogPostList('./images/Blog/blog-post-3.webp', 'Astronomy Or Astrology', '03 Hours ago')
+              +blogPostList('./images/Blog/blog-post-4.webp', 'Asteroids telescope', '01 Hours ago')
+          .blog-tag.blog-right_js
+            h4 Tag Clouds
+            ul
+              +blogTagList('project')
+              +blogTagList('love')
+              +blogTagList('technology')
+              +blogTagList('travel')
+              +blogTagList('restaurant')
+              +blogTagList('life style')
+              +blogTagList('design')
+              +blogTagList('illustration')
+          .blog-feed.blog-right_js  
+            h4 Instagram Feeds
+            ul
+              +blogFeedList('./images/Blog/feed-1.webp')
+              +blogFeedList('./images/Blog/feed-2.webp')
+              +blogFeedList('./images/Blog/feed-3.webp')
+              +blogFeedList('./images/Blog/feed-4.webp')
+              +blogFeedList('./images/Blog/feed-5.webp')
+              +blogFeedList('./images/Blog/feed-6.webp')
+          .blog-form.blog-notBtn.blog-right_js
+            h4 Newsletter
+            +blogForm('Enter Email', 'Subscribe')
+

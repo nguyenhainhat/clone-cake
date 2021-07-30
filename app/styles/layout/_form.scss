@@ -1,0 +1,47 @@
+.form {
+	h4 {
+		margin-block: 1rem;
+	}
+	textarea[placeholder='Write Comment'] {
+		width: 100%;
+		padding-block: 1rem 2rem;
+		margin-block: 2rem 1rem;
+	}
+	input {
+		margin-block: 2.5rem 0.2rem;
+		height: 48px;
+	}
+	::placeholder {
+		@include fzClr($text-font, -0.2rem, $titleBlog-color);
+		font-family: $primary-font;
+		opacity: 0.6;
+	}
+	input[placeholder='Website'] {
+		width: 100%;
+	}
+
+	&-items {
+		padding-inline: 1.5rem 0;
+		border: 1px solid #e5e6e9;
+		&:focus {
+			outline: transparent;
+			border: 1px solid $primary-color;
+			&::placeholder {
+				opacity: 0;
+			}
+		}
+	}
+	&-inf {
+		@include flexBox;
+		gap: 0 2rem;
+	}
+
+	&-group {
+		display: block;
+		flex: 1 1 auto;
+		@include fzClr($text-font, -0.1rem, $titleBlog-color);
+		input {
+			width: 100%;
+		}
+	}
+}

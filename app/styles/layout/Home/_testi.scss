@@ -1,0 +1,50 @@
+.testi {
+	margin-bottom: 23rem;
+
+	&-container {
+		position: relative;
+		width: 100%;
+	}
+	&-content {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		padding: 6rem 2rem 4rem 6rem;
+		cursor: grab;
+	}
+	&-items {
+		margin-inline: 2rem;
+		display: inline-block;
+		// transform: scale(1);
+		&:focus {
+			outline: transparent;
+			border: transparent;
+		}
+	}
+	&-title {
+		@include fzClr($title-font, 0.2rem, #391f14);
+		line-height: 1.4;
+		padding-right: 4rem;
+	}
+	&-person {
+		margin-top: 3rem;
+		@include flexBox;
+		img {
+			@include size(6rem, 6rem);
+		}
+	}
+	&-inf {
+		margin-left: 2rem;
+		span {
+			@include fzClr($title-font, -0.2rem, $primary-color);
+		}
+		p {
+			@include fzClr($text-font, -0.2rem, $fourth-color);
+		}
+	}
+	@include maxWidth(767px) {
+		:is(&-content, &-title) {
+			padding: 0;
+		}
+	}
+}

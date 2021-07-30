@@ -1,0 +1,41 @@
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-webkit-tap-highlight-color: transparent;
+}
+.text {
+	font-family: $primary-font;
+	font-size: 1.5rem;
+	font-style: italic;
+	color: $text-color;
+	line-height: 1.6;
+}
+.text-light {
+	font-weight: 300;
+}
+.text-normal {
+	font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $secondary-font;
+	color: #000;
+	margin-top: 0;
+	font-style: normal;
+	font-weight: 500;
+	text-transform: normal;
+}
+p {
+	font-family: $primary-font;
+	color: #000;
+	font-size: 1.6rem;
+	line-height: 1.8;
+	margin-bottom: 15px;
+	font-weight: normal;
+}

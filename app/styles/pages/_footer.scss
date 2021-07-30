@@ -1,0 +1,92 @@
+.footer {
+	padding-block: 12rem 0;
+	margin-block: -6rem;
+	background-image: linear-gradient(
+		to top right,
+		rgba(255, 245, 242, 0.6),
+		rgba(240, 69, 6, 0.1)
+	);
+	&-items {
+		padding-inline: 30px;
+		h4 {
+			@include fzClr($title-font, -0.2rem, $text-color);
+			font-weight: 300;
+			margin-bottom: 3rem;
+		}
+		p {
+			@include fzClr($text-font, 0, $fourth-color);
+		}
+	}
+	&-brand img {
+		padding-block: 0 3rem;
+	}
+	&-icon {
+		@include fzClr($title-font, 0, $primary-color);
+		cursor: pointer;
+		i {
+			margin-inline: 1rem 1.2rem;
+			transform: translate3d(0, 0%, 0);
+			transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+			&:hover {
+				transform: translate3d(0, -50%, 0);
+				transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+		}
+	}
+	&-list {
+		li {
+			margin-bottom: 1.5rem;
+		}
+		&_items {
+			@include fzClr($text-font, 0, $fourth-color);
+			transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			&:hover {
+				color: $primary-color;
+				border-bottom: 1px solid currentColor;
+				transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+		}
+	}
+	&-text_first {
+		margin-bottom: 3rem;
+	}
+	&-text_last {
+		margin-bottom: 3.5rem;
+	}
+	&-inf {
+		@include fzClr($title-font, -0.2rem, $primary-color);
+	}
+	&-copyright {
+		padding-block: 12rem 0.5rem;
+		max-width: 100%;
+		margin: 0 auto;
+		font-weight: 300;
+		text-align: center;
+		p {
+			@include fzClr($text-font, -0.2rem, $fourth-color);
+		}
+		i,
+		a {
+			color: $primary-color;
+		}
+	}
+	@include maxWidth(992px) {
+		&-list,
+		&-icon {
+			margin-bottom: 6rem;
+		}
+		&-copyright {
+			padding-top: 0;
+		}
+	}
+	@include maxWidth(767px) {
+		padding-top: 6rem;
+		&-text_last {
+			margin-bottom: 0;
+		}
+		&-bottom {
+			margin-top: 2rem;
+			padding-top: 5rem;
+		}
+	}
+}

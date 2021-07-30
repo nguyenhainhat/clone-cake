@@ -1,0 +1,56 @@
+.owl {
+	&-carousel {
+		cursor: grab;
+	}
+	&-items {
+		display: inline-block;
+		position: relative;
+		&:focus {
+			outline: transparent;
+			border: transparent;
+		}
+		&:hover {
+			&::after {
+				@include size(100%, 100%);
+				transform-origin: right top;
+				transition: all 0.5s cubic-bezier(0.14, 0.61, 0.95, 0.31);
+			}
+			.owl-social {
+				opacity: 1;
+				transform: translate3d(-50%, -50%, 0);
+				transition: 0.2s all 0.5s cubic-bezier(0.14, 0.61, 0.95, 0.31);
+			}
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			mix-blend-mode: multiply;
+			@include size(0%, 0%);
+			background-image: linear-gradient(
+				240deg,
+				rgba($color: $primary-color, $alpha: 0.8),
+				rgba($color: $secondary-color, $alpha: 1)
+			);
+			transform-origin: right bottom;
+			transition: all 0.5s cubic-bezier(0.14, 0.61, 0.95, 0.31);
+		}
+	}
+	&-social {
+		opacity: 0;
+		@include positionCenter('both', -100%);
+		z-index: 1;
+		transition: all 0.5s cubic-bezier(0.14, 0.61, 0.95, 0.31);
+		a {
+			&:focus {
+				outline: transparent;
+				border: transparent;
+				user-select: none;
+			}
+			@include fzClr($titleXL-font, -0.4rem, $secondary-color);
+		}
+	}
+}
+.carousel-active {
+	cursor: grabbing !important;
+}

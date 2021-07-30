@@ -1,0 +1,243 @@
+#blog-detail {
+	.blog {
+		&-img {
+			margin-bottom: 2rem;
+		}
+		&-items {
+			box-shadow: unset;
+			h2 {
+				@include fzClr($title-font, 0.2rem, $titleBlog-color);
+				font-weight: 600;
+				line-height: 1.2;
+				@include maxWidth(767px) {
+					@include textClamp(3);
+				}
+			}
+			p {
+				font-size: $text-font - 0.1rem;
+			}
+		}
+		&-inf li {
+			&:hover {
+				a {
+					color: $primary-color;
+				}
+			}
+		}
+		&-quote {
+			background: #fbf9ff;
+			padding: 2.5rem 0;
+			margin-block: 2rem;
+			&_items {
+				padding-right: 5rem;
+				background: #fff;
+				margin: 0px 3.5rem;
+				border-left: 2px solid #888888;
+				p {
+					margin-bottom: 0;
+					color: #888888;
+					padding: 2.5rem 0.5rem 2.5rem 2.5rem;
+					font-weight: 500;
+					font-style: italic;
+				}
+			}
+			@include maxWidth(767px) {
+				padding: 1.5rem;
+				&_items {
+					padding-right: 0;
+					margin-inline: 0.5rem;
+					p {
+						padding-right: 1.5rem;
+					}
+				}
+			}
+		}
+		:is(&-navigation, &-author, &-cmt, &-detail_leave) {
+			padding-block: 2rem;
+			border-top: 1px solid #ced4da;
+			h4 {
+				@include fzClr($text-font, 0.2rem, $text-color);
+				font-weight: 400;
+			}
+		}
+
+		&-navigation {
+			&_item {
+				@include flexBox(stretch, space-between);
+			}
+			&_inf {
+				p {
+					@include fzClr($text-font, -0.2rem, $text-color);
+					display: inline-block;
+					margin-left: 1rem;
+				}
+			}
+			&_link {
+				i {
+					font-weight: 300;
+					@include fzClr($text-font, 0, $body-color);
+					margin-left: 1.5rem;
+				}
+			}
+			&_post {
+				@include flexBox(stretch, space-between);
+			}
+			&_left {
+				@include flexBox(stretch, center, row, flex, wrap);
+			}
+			&_right {
+				@include flexBox(stretch, center, row-reverse, flex, wrap);
+				text-align: right;
+			}
+			&_left,
+			&_right {
+				&:hover {
+					i,
+					.blog-navigation_img::after {
+						opacity: 1;
+						transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+					}
+					a {
+						color: $primary-color;
+						transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+					}
+				}
+			}
+
+			&_img {
+				position: relative;
+				display: inline-block;
+				i {
+					@include positionCenter('both');
+					z-index: 1;
+					color: $secondary-color;
+				}
+				&::after {
+					content: '';
+					@include positionCenter('both');
+					@include size(100%, 100%);
+					background-image: linear-gradient(
+						to right top,
+						$sixth-color,
+						$secondary-color
+					);
+					mix-blend-mode: multiply;
+				}
+				i,
+				&::after {
+					opacity: 0;
+					transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+				}
+			}
+			&_title {
+				margin-inline: 2rem;
+				p {
+					margin-bottom: 0.5rem;
+				}
+				h4 a {
+					@include fzClr($text-font, 0.2rem, $body-color);
+					font-weight: 400;
+				}
+			}
+			@include maxWidth(767px) {
+				&_items {
+					@include flexBox(center, space-between, column);
+					margin-bottom: 2rem;
+				}
+				&_post {
+					flex-wrap: wrap;
+				}
+				&_left {
+					margin-bottom: 2rem;
+				}
+				&_right {
+					justify-content: flex-start;
+					flex: 1;
+				}
+			}
+		}
+		&-author {
+			// padding: 4rem 1rem;
+			&_content {
+				@include flexBox;
+				background-color: #fbfbfb;
+				margin-block: 3rem;
+				padding: 4rem 2rem;
+			}
+			&_inf {
+				margin-inline: 1.5rem;
+				width: 150px;
+				@include maxWidth(767px) {
+					width: 100%;
+					margin-left: 0;
+				}
+			}
+			&_desc {
+				a {
+					@include fzClr($text-font, 0, $text-color);
+					font-weight: 400;
+					transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+					&:hover {
+						color: $primary-color;
+						transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+					}
+				}
+				h4 {
+					margin-bottom: 0.5rem;
+				}
+				p {
+					@include fzClr($text-font, -0.1rem, $text-color);
+				}
+			}
+		}
+		&-cmt {
+			&_list {
+				@include flexBox(flex-start);
+				margin-block: 2rem;
+				img {
+					margin-right: 2rem;
+				}
+			}
+			&_desc {
+				p {
+					@include fzClr($text-font, -0.1rem, #777);
+					font-weight: 400;
+				}
+			}
+			&_inf {
+				h5 a {
+					@include fzClr($text-font, 0, $text-color);
+					margin-right: 2rem;
+					font-weight: 300;
+				}
+				@include flexBox(baseline, flex-start);
+				p {
+					@include fzClr($text-font, -0.2rem, $textBlog-color);
+				}
+			}
+			&_date {
+				flex: 1 1 auto;
+				text-align: right;
+				a {
+					text-transform: uppercase;
+					padding: 2rem;
+					@include fzClr($text-font, -0.1rem, #888);
+					&:hover {
+						color: $primary-color;
+					}
+				}
+			}
+		}
+		&-detail_leave {
+			h4 {
+				padding-left: 1.5rem;
+			}
+		}
+		@include maxWidth(767px) {
+			&-right {
+				padding-inline: 0;
+			}
+		}
+	}
+}

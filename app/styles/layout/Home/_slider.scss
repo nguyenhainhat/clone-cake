@@ -1,0 +1,166 @@
+// #slider-home {
+.slider {
+	position: relative;
+	top: 36px;
+	// z-index: -2;
+	&-container {
+		position: sticky;
+		background: url('../images/Home/background.png') no-repeat center/cover;
+		// z-index: 1;
+	}
+	&-content {
+		font-family: $primary-font;
+		h1 {
+			font: {
+				weight: 700;
+				family: $secondary-font;
+			}
+			color: $text-color;
+			line-height: 1.2;
+			margin-bottom: 24px;
+			@include animationSlider;
+			// animation-delay: 5.1s;
+		}
+		p {
+			margin-bottom: 4rem;
+			color: #1a1a1a;
+			font-size: 1.8rem;
+			line-height: 1.6;
+			font-weight: 500;
+			@include animationSlider;
+		}
+	}
+	&-caption {
+		position: relative;
+		top: 90px;
+	}
+	&-title {
+		font-family: $third-font;
+		color: $slider-color;
+		animation: titleAnimate 3.5s infinite ease-in;
+	}
+	@keyframes titleAnimate {
+		0%,
+		100% {
+			transform: scale(0.97);
+		}
+		20%,
+		40%,
+		60% {
+			transform: scale(0.98);
+		}
+		10%,
+		90% {
+			transform: scale(1);
+		}
+	}
+	.btn-slider {
+		padding-block: 1.5rem;
+		a {
+			font-size: 2.2rem;
+			font-weight: 400;
+			color: $secondary-color;
+		}
+		@include animationSlider;
+	}
+	&-sub {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	@include minWidth(993px) {
+		&-container {
+			min-height: 820px;
+		}
+		&-content {
+			padding-left: 0.2rem;
+			margin-left: 0.6rem;
+			width: 58rem;
+			h1 {
+				font-size: 8rem;
+			}
+		}
+		&-caption {
+			height: 224px;
+		}
+		&-title {
+			font-size: 16rem;
+		}
+		.btn-slider {
+			padding-inline: 4.5rem;
+		}
+	}
+
+	@include minMaxWidth(768px, 992px) {
+		&-container {
+			min-height: 580px;
+		}
+		&-content {
+			padding-left: 0.2rem;
+			margin-left: 0.6rem;
+			position: absolute;
+			top: 45%;
+			transform: translate3d(0, -50%, 10px);
+			width: 52rem;
+			h1 {
+				font-size: 6rem;
+			}
+		}
+		&-caption {
+			top: 60px;
+		}
+		&-title {
+			font-size: clamp(8rem, 12vw, 9rem);
+		}
+		&-sub img {
+			max-width: 205px;
+		}
+		.btn-slider {
+			padding-inline: 2rem;
+		}
+	}
+
+	@include maxWidth(767px) {
+		&-container {
+			min-height: 660px;
+		}
+		&-caption {
+			height: 160px;
+		}
+		&-content {
+			margin: 0;
+			padding: 0;
+			width: 49rem;
+			h1 {
+				font-size: 6rem;
+			}
+		}
+		&-title {
+			font-size: 8rem;
+		}
+		.btn-slider {
+			padding-inline: 2.5rem;
+		}
+		&-sub {
+			opacity: 0;
+			transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		}
+	}
+
+	@include maxWidth(576px) {
+		&-content {
+			width: 35rem;
+			padding: 1.5rem;
+			h1 {
+				font-size: 4rem;
+			}
+		}
+		&-caption {
+			height: 130px;
+			top: 55px;
+		}
+	}
+}
+// }

@@ -1,0 +1,101 @@
+.btn {
+	color: $secondary-color;
+	background: $primary-color;
+	border: none;
+	text-transform: capitalize;
+	border-radius: 30px;
+	cursor: pointer;
+	font-weight: 400;
+	box-shadow: 0 17px 27px rgba($color: $primary-color, $alpha: 0.27);
+	z-index: 1;
+	display: inline-block;
+	background-size: 200%;
+	transition: 0.6s;
+	background-image: linear-gradient(
+		to left,
+		$primary-color,
+		#d83e06,
+		$primary-color
+	);
+	background-position: right;
+	&:hover {
+		background-position: left;
+	}
+	&-form {
+		position: relative;
+		@include size(100%, 6rem);
+		a {
+			@include fzClr($text-font, -0.2rem, $primary-color);
+		}
+		background: $secondary-color;
+		font-family: $secondary-font;
+		border: 1px solid $primary-color;
+		text-transform: uppercase;
+		letter-spacing: 0.3rem;
+		transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		box-shadow: unset;
+		// width: auto;
+		margin-top: 1.5rem;
+		padding-inline: 3rem;
+		display: inline-block;
+		border-radius: unset;
+		&:hover {
+			background: $primary-color;
+			a {
+				color: $secondary-color;
+				transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+		}
+		@include maxWidth(767px) {
+			width: 100%;
+		}
+	}
+	&-carousel {
+		position: absolute;
+		top: 50%;
+		color: $primary-color;
+		font-size: 3rem;
+		padding: 2rem;
+		background-color: transparent;
+		border: transparent;
+		&_right {
+			right: 0;
+			transform: translateX(50%);
+		}
+		&_left {
+			left: 0;
+			transform: translateX(-50%);
+		}
+	}
+	&-backTop {
+		position: sticky;
+		bottom: 0;
+		left: calc(-3rem + 87vw);
+		opacity: 0;
+		transform: translate3d(35%, -50%, 10px);
+		transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+		&_items {
+			padding: 2rem;
+			a {
+				@include fzClr($title-font, -0.2rem, $secondary-color);
+			}
+		}
+		&_scroll {
+			position: fixed;
+			opacity: 1;
+			transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+			z-index: 99;
+		}
+		@include maxWidth(992px) {
+			bottom: 2rem;
+			left: calc(2rem + 80vw);
+		}
+		@include maxWidth(767px) {
+			left: 76vw;
+		}
+		@include maxWidth(540px) {
+			left: calc(6rem + 60vw);
+			bottom: 4rem;
+		}
+	}
+}

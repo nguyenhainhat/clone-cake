@@ -1,0 +1,60 @@
++sliderComponents({
+  title: 'Delicious', 
+  caption: 'Blog',
+  imgSub: "../images/Home/bg-sub.webp"
+})
+
+section.blog#blog
+  .container
+    .row
+      .col-lg-8
+        .blog-left
+          +blogItems("./images/Blog/blog-1.webp")
+          +blogItems("./images/Blog/blog-2.webp")
+          +blogItems("./images/Blog/blog-3.webp")
+          +blogItems("./images/Blog/blog-4.webp")
+          +blogItems("./images/Blog/blog-5.webp")
+      .col-lg-4
+        .blog-right
+          .blog-form.blog-right_js
+            +blogForm('Search Keyword', 'Search')
+          .blog-category.blog-right_js
+            h4 Category
+            ul
+              +blogCategoryList('Resaurant food', '(37)')
+              +blogCategoryList('Travel news', '(10)')
+              +blogCategoryList('Modern technology', '(03)')
+              +blogCategoryList('Product', '(11)')
+              +blogCategoryList('Inspiration', '(21)')
+              +blogCategoryList('Health Care', '(21)')
+          .blog-post.blog-right_js
+            h4 Recent Post
+            ul
+              +blogPostList('./images/Blog/blog-post-1.webp', 'From life was you fish...', 'January 12, 2019')
+              +blogPostList('./images/Blog/blog-post-2.webp', 'The Amazing Hubble', '02 Hours ago')
+              +blogPostList('./images/Blog/blog-post-3.webp', 'Astronomy Or Astrology', '03 Hours ago')
+              +blogPostList('./images/Blog/blog-post-4.webp', 'Asteroids telescope', '01 Hours ago')
+          .blog-tag.blog-right_js
+            h4 Tag Clouds
+            ul
+             +blogTagList('project')
+             +blogTagList('love')
+             +blogTagList('technology')
+             +blogTagList('travel')
+             +blogTagList('restaurant')
+             +blogTagList('life style')
+             +blogTagList('design')
+             +blogTagList('illustration')
+          .blog-feed.blog-right_js  
+            h4 Instagram Feeds
+            ul
+             +blogFeedList('./images/Blog/feed-1.webp')
+             +blogFeedList('./images/Blog/feed-2.webp')
+             +blogFeedList('./images/Blog/feed-3.webp')
+             +blogFeedList('./images/Blog/feed-4.webp')
+             +blogFeedList('./images/Blog/feed-5.webp')
+             +blogFeedList('./images/Blog/feed-6.webp')
+          .blog-form.blog-notBtn.blog-right_js
+            h4 Newsletter
+            +blogForm('Enter Email', 'Subscribe')
+             

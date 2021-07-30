@@ -1,0 +1,269 @@
++sliderComponents({
+  title: 'Delicious', 
+  caption: 'Elements',
+  imgSub: "../images/Home/bg-sub.webp"
+})
+
+section#blog-eml.blog.section-padding
+  .container  
+    .blog-text.blog-padding
+      h3 Text Sample
+      p.
+        Every avid independent filmmaker has <b>Bold</b> about making that <i>Italic</i> interest documentary, 
+        or short film to show off their creative prowess. Many have great ideas and want to “wow” 
+        <sup>the Superscript</sup> scene, or video renters with their big project. But once you have <sub>the Subscript</sub> 
+        “in the can” (no easy feat), how do you move from a <del>Strike</del> through of master DVDs with the 
+        <u>“Underline”</u> marked hand-written title inside a secondhand CD case, to a pile of cardboard boxes 
+        full of shiny new, retail-ready DVDs, with UPC barcodes and polywrap sitting on your doorstep? 
+        You need to create eye-popping artwork and have your project replicated. Using a reputable full 
+        service DVD Replication company like PacificDisc, Inc. to partner with is certainly a helpful option 
+        to ensure a professional end result, but to help with your DVD replication project, here are 4 easy 
+        steps to follow for good DVD replication results:
+    .blog-btns.blog-padding
+      h3 Sample Buttons
+      .blog-btns_first.blog-btns_js
+        +blogBtn
+      .blog-btns_secondary.blog-btns_js
+        +blogBtn
+      .blog-btns_third.blog-btns_js
+        +blogBtn
+      .blog-btns_fourth.blog-btns_js
+        +blogBtn
+    .blog-main.blog-padding
+      .blog-definition.blog-padding
+        h3 Definition
+        .blog-definition_container
+          .blog-definition_items
+            +blogDefinitionItems
+          .blog-definition_items
+            +blogDefinitionItems("Definition 02")
+          .blog-definition_items
+            +blogDefinitionItems("Definition 03")
+      .blog-quote.blog-padding
+        h3 Block Quotes
+        .blog-quote_container
+          .blog-quote_content
+            p 
+              |“Recently, the US Federal government banned online casinos from operating 
+              |in America by making it illegal to transfer money to them through any US 
+              |bank or payment system. As a result of this law, most of the popular online 
+              |casino networks such as Party Gaming and PlayTech left the United States. 
+              |Overnight, online casino players found themselves being chased by the Federal 
+              |government. But, after a fortnight, the online casino industry came up with a 
+              |solution and new online casinos started taking root. These began to operate under 
+              |a different business umbrella, and by doing that, rendered the transfer of money 
+              |to and from them legal. A major part of this was enlisting electronic banking 
+              |systems that would accept this new clarification and start doing business with me. 
+              |Listed in this article are the electronic banking”
+      .blog-table.blog-padding
+        h3 Table
+        .blog-table_container
+          .blog-table_content
+            .blog-table_head
+              .blog-table_serial #
+              .blog-table_countries Countries
+              .blog-table_visits Visits
+              .blog-table_percentages Percentages
+            .blog-table_row
+              +blogTableList({
+                serial: "01",
+                countries: "Canada",
+                img: "../images/Blog/table-1.webp",
+                visits: "645032",
+                percentages: ""
+              })
+            .blog-table_row
+              +blogTableList({
+                serial: "02",
+                countries: "Canada",
+                img: "../images/Blog/table-2.webp",
+                visits: "645032",
+                percentages: ""
+            })
+            .blog-table_row
+              +blogTableList({
+                serial: "03",
+                countries: "Canada",
+                img: "../images/Blog/table-1.webp",
+                visits: "645032",
+                percentages: ""
+            })
+            .blog-table_row
+              +blogTableList({
+                serial: "04",
+                countries: "Canada",
+                img: "../images/Blog/table-2.webp",
+                visits: "645032",
+                percentages: ""
+            })
+            .blog-table_row
+              +blogTableList({
+                serial: "05",
+                countries: "Canada",
+                img: "../images/Blog/table-1.webp",
+                visits: "645032",
+                percentages: ""
+            })
+            .blog-table_row
+              +blogTableList({
+                serial: "06",
+                countries: "Canada",
+                img: "../images/Blog/table-2.webp",
+                visits: "645032",
+                percentages: ""
+            })
+            .blog-table_row
+              +blogTableList({
+                serial: "07",
+                countries: "Canada",
+                img: "../images/Blog/table-1.webp",
+                visits: "645032",
+                percentages: ""
+            })
+            .blog-table_row
+              +blogTableList({
+                serial: "08",
+                countries: "Canada",
+                img: "../images/Blog/table-2.webp",
+                visits: "645032",
+                percentages: ""
+            })
+      .blog-images.blog-padding
+        h3 Image Gallery
+        .blog-images_container
+          a(href="#!").blog-images_1.blog-images_js
+            img(src="../images/Blog/g1.webp")
+          a(href="#!").blog-images_2.blog-images_js
+            img(src="../images/Blog/g2.webp")
+          a(href="#!").blog-images_3.blog-images_js
+            img(src="../images/Blog/g3.webp")
+          a(href="#!").blog-images_4.blog-images_js
+            img(src="../images/Blog/g4.webp")
+          a(href="#!").blog-images_5.blog-images_js
+            img(src="../images/Blog/g5.webp")
+          a(href="#!").blog-images_6.blog-images_js
+            img(src="../images/Blog/g6.webp")
+          a(href="#!").blog-images_7.blog-images_js
+            img(src="../images/Blog/g7.webp")
+          a(href="#!").blog-images_8.blog-images_js
+            img(src="../images/Blog/g8.webp")
+      .blog-last.blog-padding
+        .row
+          .col-lg-8.col-md-8
+            h3 Form Element
+            form.form
+              input(type= "text", placeholder= "First Name", name= "first_name").blog-form_control.blog-form_js_scroll
+              input(type= "text", placeholder= "Last Name", name= "last_name").blog-form_control.blog-form_js_scroll
+              input(type= "email", placeholder= "Email", name= "email").blog-form_control.blog-form_js_scroll
+              input(type= "text", placeholder= "Address", name= "address").blog-form_control.blog-form_js_scroll
+              .blog-form_icon.blog-form_js_scroll
+                .blog-icon
+                  i.fas.fa-plane 
+                .blog-form_list
+                  span.blog-form_list--title.placeholder City
+                  ul
+                    li.blog-form_list--items City
+                    li.blog-form_list--items Dhaka
+                    li.blog-form_list--items Dilli
+                    li.blog-form_list--items Newyork
+                    li.blog-form_list--items Islamabad
+              .blog-form_icon.blog-form_js_scroll
+                .blog-icon
+                  i.fas.fa-globe
+                .blog-form_list
+                  span.blog-form_list--title.placeholder Country
+                  ul
+                    li.blog-form_list--items Country
+                    li.blog-form_list--items Bangladesh
+                    li.blog-form_list--items India
+                    li.blog-form_list--items England
+                    li.blog-form_list--items Srilanka
+              textarea(placeholder= "Message").blog-form_control.blog-form_js_scroll
+              input(type= "text", placeholder= "Primary color", name= "primary_color").blog-form_control.blog-form_js_scroll
+              input(type= "text", placeholder= "Accent color", name= "accent_color").blog-form_control.blog-form_js_scroll
+              input(type= "text", placeholder= "Secondary color", name= "secondary_color").blog-form_control.blog-form_js_scroll
+          .col-lg-3.col-md-4
+            .blog-switches.mb-20.blog-right_js
+              h3 Switches
+              .blog-switches_items
+                p 01. Sample Switch
+                .blog-switches_control
+                  input(type= "checkbox")#switches-input1.switches-input
+                  label(for= "switches-input1")
+              .blog-switches_items
+                p 02. Primary Color Switch
+                .blog-switches_control
+                  input(type= "checkbox" checked)#switches-input2.switches-input
+                  label(for= "switches-input2")
+              .blog-switches_items
+                p 03. Confirm Color Switch
+                .blog-switches_control
+                  input(type= "checkbox" checked)#switches-input3.switches-input
+                  label(for= "switches-input3")
+            .blog-selectboxes.mb-20.blog-right_js
+              h3 Selectboxes
+              .blog-selectboxes_container.blog-form
+                .blog-form_list
+                  span.blog-form_list--title.placeholder English
+                  ul
+                    li.blog-form_list--items English
+                    li.blog-form_list--items Spanish
+                    li.blog-form_list--items Arabic
+                    li.blog-form_list--items Portuguise
+                    li.blog-form_list--items Bengali
+            .blog-checkboxes.mb-20.blog-right_js
+              h3 Checkboxes
+              .blog-checkboxes_items 
+                p 01. Sample Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox")#checkboxes-input1.checkboxes-input
+                  label(for= "checkboxes-input1")
+              .blog-checkboxes_items 
+                p 02. Primary Color Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox" checked)#checkboxes-input2.checkboxes-input
+                  label(for= "checkboxes-input2")
+              .blog-checkboxes_items 
+                p 03. Confirm Color Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox" checked)#checkboxes-input3.checkboxes-input
+                  label(for= "checkboxes-input3").confirm
+              .blog-checkboxes_items 
+                p 04. Disabled Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox" disabled)#checkboxes-input4.checkboxes-input
+                  label(for= "checkboxes-input4").disabled
+              .blog-checkboxes_items 
+                p 05. Disabled Checkbox active
+                .blog-checkboxes_control
+                  input(type= "checkbox" checked disabled)#checkboxes-input5.checkboxes-input
+                  label(for= "checkboxes-input5").disabled
+            .blog-radios.mb-20.blog-checkboxes.blog-right_js
+              h3 Radios
+              .blog-checkboxes_items 
+                p 01. Sample Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox")#radios-input1.checkboxes-input
+                  label(for= "radios-input1")
+              .blog-checkboxes_items 
+                p 02. Primary Color Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox" checked)#radios-input2.checkboxes-input
+                  label(for= "radios-input2")
+              .blog-checkboxes_items 
+                p 03. Confirm Color Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox" checked)#radios-input3.checkboxes-input
+                  label(for= "radios-input3").confirm
+              .blog-checkboxes_items 
+                p 04. Disabled Checkbox
+                .blog-checkboxes_control
+                  input(type= "checkbox" disabled)#radios-input4.checkboxes-input
+                  label(for= "radios-input4").disabled
+              .blog-checkboxes_items 
+                p 05. Disabled Checkbox active
+                .blog-checkboxes_control
+                  input(type= "checkbox" checked disabled)#radios-input5.checkboxes-input
+                  label(for= "radios-input5").disabled
+      
+      

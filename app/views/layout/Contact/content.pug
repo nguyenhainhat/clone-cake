@@ -1,0 +1,39 @@
++sliderComponents({
+  title: 'Delicious', 
+  caption: 'Contact',
+  imgSub: "../images/Home/bg-sub.webp"
+})
+
+
+#contact.contact
+  .container
+    #map
+    .row
+      .col-12
+        .section-title   
+          h2 Get in Touch
+      .col-lg-8.col-sm-12
+        .contact-title
+          form.form
+            .col-12  
+              .form-group.blog-form_js_scroll
+                textarea(placeholder= "Enter Your Messages",cols = "30", rows= "9", name= "messages" value='' data-validation-required-message= "Please Enter Messages").form-items.col-sm-12 
+            .col-12
+              .form-inf
+                .form-group.blog-form_js_scroll
+                  input(type= "text" name= "name", placeholder= "Enter Your Name" value=''  data-validation-required-message= "Please Enter Name").form-items.col-sm-6
+ 
+                .form-group.blog-form_js_scroll
+                  input(type = "email" name= "email", placeholder= "Enter Your Email" value=''  data-validation-required-message= "Please Enter Email").form-items.col-sm-6
+ 
+            .col-12
+              .form-group.blog-form_js_scroll
+                input(type = "text", name= "website", placeholder= "Enter Your Website" value=''  data-validation-required-message= "Please Enter Website").form-items.col-sm-12 
+            .col-12
+              button.btn.btn-form.w-auto.blog-form_js_scroll
+                a(href="#!") SEND
+      .col-lg-4.col-sm-12
+        .contact-right
+          +contactRightItems("Buttonwood, California.","Rosemead, CA 91770")(class="fa-home")
+          +contactRightItems("+1 253 565 2365", "Mon to Fri 9am to 6pm")(class="fa-tablet-alt")
+          +contactRightItems("support@colorlib.com","Send us your query anytime!")(class="fa-envelope")

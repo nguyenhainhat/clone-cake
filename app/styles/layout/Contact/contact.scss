@@ -1,0 +1,60 @@
+.contact {
+	margin-block: 2rem 12rem;
+	padding-block: 7rem 8rem;
+	h2 {
+		@include fzClr($title-font, 0, $text-color);
+
+		margin-bottom: 1.2rem;
+		font-weight: 600;
+		padding-left: 1.5rem;
+	}
+	&-title {
+		margin-bottom: 8rem;
+		textarea {
+			padding-top: 1rem;
+		}
+		.form-items {
+			@extend .bs-primary;
+		}
+		.btn-form {
+			padding-inline: 5rem;
+		}
+	}
+	&-right {
+		margin-left: 10rem;
+		&_items {
+			@include flexBox(flex-start);
+			margin-bottom: 2rem;
+			i {
+				font-size: $title-font;
+				margin-right: 2rem;
+				flex-basis: 10%;
+			}
+		}
+		&_content {
+			h3 {
+				@include fzClr($text-font, 0, #2a2a2a);
+				font-weight: 400;
+			}
+			P {
+				@include fzClr($text-font, 0, $paginationBlog-color);
+			}
+		}
+		@include maxWidth(992px) {
+			margin-left: 2rem;
+			@include flexBox;
+			flex-wrap: wrap;
+			&_items {
+				margin-right: 2rem;
+			}
+		}
+		@include minWidth(767px) {
+			display: block;
+		}
+	}
+}
+
+#map {
+	height: 80vh;
+	margin-bottom: 3rem;
+}

@@ -1,0 +1,11 @@
+extends pages/layout
+
+block vars
+  -title = 'Welcomes to Gulp Template workflow'
+  -bodyClass = 'home-page'
+
+block container
+  include layout/About/content
+  include layout/Home/ourVideo
+  include layout/Home/testi
+  include components/carousel

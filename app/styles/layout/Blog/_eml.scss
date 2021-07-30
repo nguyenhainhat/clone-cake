@@ -1,0 +1,440 @@
+#blog-eml {
+	h3 {
+		@include fzClr($title-font, 0.2rem, $text-color);
+	}
+	padding-top: 0;
+	.blog {
+		&-text {
+			h3 {
+				margin-bottom: 2rem;
+			}
+			p {
+				line-height: 1.8;
+			}
+		}
+		&-btns {
+			&_top {
+				margin-block: 3rem;
+			}
+			&_first {
+				padding-top: 5rem;
+				& > * {
+					border-radius: 50px;
+				}
+			}
+			&_items {
+				display: inline-block;
+				font-size: 13px;
+				font-weight: 500;
+				margin-right: 1.5rem;
+				margin-bottom: 1rem;
+				@include maxWidth(767px) {
+					margin-right: 1rem;
+				}
+			}
+		}
+		&-main {
+			margin-block: 3rem;
+			h3 {
+				@include fzClr($text-font, 0.15rem, $text-color);
+				margin-bottom: 3rem;
+			}
+		}
+		&-padding {
+			padding: 6rem 0;
+			&:not(:first-child) {
+				border-top: 1px solid #e2e5f1;
+			}
+			@include maxWidth(767px) {
+				padding: 3rem 0;
+			}
+		}
+		&-definition {
+			&_container {
+				@include flexBox(stretch, space-between);
+				gap: 3rem;
+				margin-top: 2rem;
+				@include maxWidth(767px) {
+					flex-wrap: wrap;
+				}
+			}
+			&_items {
+				h4 {
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+		&-quote {
+			&_container {
+				background: #fbf9ff;
+				border-left: 2px solid #000;
+			}
+			&_content {
+				padding: 2rem 3rem;
+				p {
+					line-height: 1.6;
+					margin-right: 2rem;
+				}
+			}
+		}
+		&-table {
+			&_container {
+				background: #fbf9ff;
+			}
+			h3 {
+				margin-bottom: 1rem;
+			}
+			&_content {
+				padding-block: 2rem;
+			}
+			&_head {
+				@include flexBox(stretch, stretch);
+				& > * {
+					@include fzClr($text-font, 0, #415094);
+					text-transform: uppercase;
+					font-weight: 500;
+				}
+			}
+
+			&_countries {
+				@include flexBox(center);
+				img {
+					margin-left: 1.5rem;
+				}
+			}
+			@include maxWidth(767px) {
+				&_container {
+					max-width: 502px;
+					margin: 0 auto;
+					overflow-x: scroll;
+				}
+				&_content {
+					min-width: 835px;
+				}
+			}
+		}
+		&-images {
+			&_container {
+				display: grid;
+
+				img {
+					@include size(100%, 100%);
+				}
+			}
+			@include minWidth(768px) {
+				&_container {
+					grid-template-columns: repeat(6, 1fr);
+					gap: 3rem;
+					grid-template-rows: 28% 36% 27%;
+				}
+				&_1,
+				&_6 {
+					grid-column: 1/3;
+				}
+				&_2,
+				&_7 {
+					grid-column: 3/5;
+				}
+				&_3,
+				&_8 {
+					grid-column: 5/7;
+				}
+				&_4 {
+					grid-column: 1/4;
+				}
+				&_5 {
+					grid-column: 4/7;
+				}
+			}
+			@include maxWidth(767px) {
+				&_container {
+					@include touchSlider(80%, 2rem);
+				}
+			}
+		}
+		&-last {
+			.blog-form {
+				:is(&_control, &_icon) {
+					transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+					@extend .bs-primary;
+					border: transparent;
+					outline: transparent;
+					&:focus {
+						&::placeholder {
+							opacity: 0;
+							transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+						}
+					}
+				}
+				&_control,
+				&_icon {
+					width: 100%;
+					margin-bottom: 1.5rem;
+					height: 4rem;
+					background: #f9f9ff;
+
+					padding-left: 2rem;
+					&::placeholder {
+						@include fzClr($text-font, 0, $textBlog-color);
+					}
+				}
+				&_control {
+					padding-top: 1rem;
+				}
+				::placeholder,
+				.placeholder {
+					@include fzClr($text-font, 0, $paginationBlog-color);
+					font-family: $primary-font;
+					transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+				}
+				&_icon {
+					position: relative;
+					cursor: pointer;
+					&:nth-of-type(1) {
+						z-index: 2;
+					}
+					&:nth-of-type(2) {
+						z-index: 1;
+					}
+				}
+				input[placeholder='Address'] {
+					padding-left: 3.8rem;
+				}
+				textarea {
+					height: 100px;
+				}
+				&_list {
+					position: absolute;
+					transform: translate3d(50%, 0%, 10px);
+					top: 0%;
+					left: -50%;
+					width: 100%;
+					span {
+						@include fzClr($text-font, 0, $textBlog-color);
+					}
+					ul {
+						position: absolute;
+						top: 40px;
+						left: 0%;
+						padding-block: 0.8rem;
+						opacity: 0;
+						transform: scale(0);
+						width: 100%;
+						background-color: #fff;
+						@extend .bs-primary;
+						overflow: hidden;
+						transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+						z-index: 2;
+						li {
+							padding-left: 3.8rem;
+							padding-block: 0.7rem;
+							@include fzClr($text-font, 0, $text-color);
+							cursor: pointer;
+							&:hover {
+								// color: #1e99ca;
+								@include fzClr($text-font, 0.2rem, #1e99ca);
+							}
+						}
+					}
+					&::after {
+						content: '';
+						position: absolute;
+						right: 1%;
+						top: 30%;
+						transform: rotate(45deg) translate3d(-100%, 150%, 0);
+						@include size(7px, 7px);
+						border-bottom: 2px solid #2d2d2d;
+						border-right: 2px solid #2d2d2d;
+						transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+					}
+					&--title {
+						padding-left: 3.8rem;
+						display: block;
+						height: 40px;
+						padding-block: 0.8rem 0rem;
+					}
+				}
+				&_js {
+					&::after {
+						transform: rotate(225deg) translate3d(50%, -150%, 0);
+						transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+					}
+					ul {
+						transform: scale(1);
+						opacity: 1;
+						transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+					}
+				}
+			}
+		}
+		&-icon {
+			position: absolute;
+			left: 0%;
+			@include fzClr($text-font, 0, $textBlog-color);
+			transform: translate3d(50%, 10px, 10px);
+			z-index: 10;
+		}
+		&-switches {
+			&_items {
+				@include flexBox(baseline, space-between);
+				position: relative;
+				p {
+					flex: 1;
+				}
+			}
+			&_control {
+				position: relative;
+				inset: 0;
+				@include size(45px, 25px);
+				align-self: flex-start;
+				overflow: hidden;
+				label {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					cursor: pointer;
+					&::after {
+						content: '';
+						position: absolute;
+						padding: 1.2rem 2rem;
+						border-radius: 2rem;
+						background-color: $textBlog-color;
+						z-index: 9;
+					}
+					&::before {
+						content: '';
+						position: absolute;
+						top: 50%;
+						transform: translate3d(0, -55%, 10px);
+						padding: 1rem;
+						background-color: $secondary-color;
+						border-radius: 5rem;
+						z-index: 10;
+						transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+					}
+				}
+			}
+			.switches-input {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+		}
+		&-selectboxes {
+			h3 {
+				margin-bottom: 2rem;
+			}
+			&_container {
+				position: relative;
+				height: 40px;
+				inset: 0;
+			}
+			.blog-form_list {
+				@extend .bg-input;
+				transform: unset;
+				inset: 0 auto auto 0;
+				width: 50%;
+				@extend .bs-primary;
+				cursor: pointer;
+				span {
+					@include fzClr($text-font, -0.2rem, $body-color);
+				}
+				ul {
+					top: 45px;
+					left: 0%;
+					padding-block: 1rem;
+					text-align: center;
+					li {
+						padding-left: 0;
+					}
+				}
+				&--title {
+					padding: 0.8rem 3rem;
+					@include maxWidth(992px) {
+						padding: 0.8rem 2rem;
+					}
+				}
+			}
+		}
+		&-checkboxes {
+			&_items {
+				@include flexBox(baseline, space-between);
+				margin-bottom: 2rem;
+			}
+			&_control {
+				position: relative;
+				@include size(20px, 20px);
+				transform: translate3d(0%, 25%, 0);
+				@extend .bg-input;
+				@extend .bs-primary;
+			}
+			.checkboxes-input {
+				position: absolute;
+				inset: 0;
+				@include size(100%, 100%);
+
+				opacity: 0;
+				&:checked + label::after {
+					opacity: 1;
+				}
+				&:checked + label::before {
+					opacity: 1;
+				}
+				& + label {
+					border-radius: 5px;
+				}
+			}
+			label {
+				position: absolute;
+				inset: 0;
+				@include size(100%, 100%);
+				border: 1px solid #f1f1f1;
+				overflow: hidden;
+				&::after {
+					content: '';
+					position: absolute;
+					inset: 0;
+					opacity: 0;
+					@include size(100%, 100%);
+					background-color: $primary-color;
+					z-index: 1;
+				}
+				&::before {
+					content: '';
+					position: absolute;
+					inset: 0;
+					opacity: 0;
+					@include size(10px, 5px);
+					border-left: 2px solid $secondary-color;
+					border-bottom: 2px solid $secondary-color;
+					transform: rotate(-45deg) translate3d(-5%, 130%, 0);
+					z-index: 2;
+					@include maxWidth(992px) {
+						transform: rotate(-45deg) translate3d(-15%, 130%, 0);
+					}
+				}
+			}
+		}
+		&-radios {
+			.blog-checkboxes_control {
+				border-radius: 50px;
+			}
+			label {
+				&::after {
+					border-radius: 50px;
+				}
+				&::before {
+					border: unset;
+					border-radius: 50px;
+					@include size(10px, 10px);
+					transform: translate3d(40%, 40%, 0px);
+					background-color: $secondary-color;
+					@include maxWidth(992px) {
+						transform: translate3d(30%, 40%, 0px);
+					}
+				}
+			}
+		}
+	}
+}

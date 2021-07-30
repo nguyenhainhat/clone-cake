@@ -1,0 +1,120 @@
+.our {
+	background-image: linear-gradient(
+		to top right,
+		rgba($color: $whiteBold-color, $alpha: 0.6),
+		rgba($color: $primary-color, $alpha: 0.1)
+	);
+	margin-bottom: 0;
+	padding-bottom: 10rem;
+
+	&-container {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&-items {
+		text-align: center;
+		padding-top: 5rem;
+		background-color: inherit;
+		transition: background-color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+		&:hover {
+			background-color: $secondary-color;
+			box-shadow: 0px 10px 30px 0px rgba($color: #b07eda, $alpha: 0.2);
+			transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+			h5 a {
+				cursor: pointer;
+				color: $primary-color;
+				transition: color 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+		}
+	}
+	&-icon {
+		img {
+			border-radius: 10rem;
+			margin: auto;
+			box-shadow: 0px 25px 40px rgba($color: #f2dfda, $alpha: 0.8);
+			transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+		}
+	}
+	&-content {
+		h5 {
+			margin-block: 2rem 0.5rem;
+			a {
+				font-size: $text-font + 0.2rem;
+				color: #001f38;
+				transition: color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+		}
+	}
+	@include minWidth(993px) {
+		&-items {
+			padding-bottom: 6.9rem;
+			margin: 3rem 2rem;
+			padding-inline: 1.2rem;
+		}
+		&-content {
+			p {
+				padding: 0 2.2vw;
+			}
+		}
+	}
+
+	@include maxWidth(992px) {
+		&-container {
+			margin: 0;
+		}
+		&-items {
+			padding-bottom: 5.3rem;
+			margin: 1rem 0.8rem;
+		}
+		&-content {
+			p {
+				padding: 0 3rem;
+			}
+		}
+	}
+
+	@include maxWidth(767px) {
+		padding-bottom: 6rem;
+		&-container {
+			flex-direction: column;
+		}
+	}
+}
+
+.video {
+	&-container {
+		position: relative;
+		background: url('../images/Home/video-bg.webp') no-repeat center/cover;
+		height: 600px;
+	}
+	&-link {
+		@include positionCenter('both');
+		background-color: $secondary-color;
+		border-radius: 10rem;
+		@include size(11rem, 11rem);
+		border: 2px solid $primary-color;
+		::after {
+			content: '';
+			@include positionCenter('both');
+			@include size(20rem, 20rem);
+			background-color: rgba($color: $secondary-color, $alpha: 0.2);
+			z-index: -1;
+			border-radius: 10rem;
+		}
+	}
+	&-icon {
+		@include positionCenter('both');
+		font-size: 2rem;
+		color: $primary-color;
+	}
+	@include maxWidth(992px) {
+		&-container {
+			height: 410px;
+		}
+	}
+	@include maxWidth(767px) {
+		&-container {
+			height: 240px;
+		}
+	}
+}

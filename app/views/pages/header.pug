@@ -1,0 +1,20 @@
+header.header#header
+  .container-fluid
+    .header-area
+      .header-left
+        a(href="index.html").header-brand
+          img(src="./images/brand-cake.webp", alt="brand cake template")
+        ul.header-list
+          +listNavbar('Home','index.html')
+          +listNavbar('Product','product.html')
+          +listNavbar('About','about.html')
+          +listNavbar('Blog')
+          +listNavbar('Contact','contact.html')
+      .header-right
+        a(href="#!").header-inf 
+          <i class="fas fa-phone-alt"></i> +10 (56) 745 3095
+        a(href="#!").btn.header-btn Order Online
+      button.header-menu.header-menu_close
+        <i class="fas fa-times"></i>
+      button.header-menu.header-menu_open
+        <i class="fas fa-bars "></i>

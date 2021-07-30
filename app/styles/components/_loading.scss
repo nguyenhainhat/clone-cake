@@ -1,0 +1,89 @@
+.preloader {
+	position: fixed;
+	inset: 0;
+	background-color: #f7f7f7;
+	z-index: 100;
+	&-container {
+		position: absolute;
+		inset: 0;
+		@include size(100%, 100%);
+		@include flexBox(center, center);
+	}
+
+	&-items {
+		position: absolute;
+		@include size(15rem, 15rem);
+		box-shadow: 0 0 20px 5px #d7ece5;
+		border-radius: 50%;
+		animation: runPosition 2.2s cubic-bezier(0.47, 0.22, 0.91, 0.6);
+	}
+	@keyframes runPosition {
+		0% {
+			border-radius: 20%;
+			top: 47%;
+			transform: rotate(-360deg);
+			opacity: 0;
+		}
+
+		40% {
+			border-radius: 35%;
+			top: 43%;
+			transform: rotate(-180deg);
+			opacity: 1;
+		}
+
+		100% {
+			border-radius: 50%;
+			top: 38%;
+			transform: rotate(0);
+		}
+	}
+	&-image {
+		position: absolute;
+		@include size(5rem, 5rem);
+		overflow: hidden;
+		animation: runPositionImg 2.2s cubic-bezier(0.47, 0.22, 0.91, 0.6);
+	}
+	@keyframes runPositionImg {
+		0% {
+			top: 30%;
+			opacity: 0;
+		}
+		40% {
+			top: 40%;
+			opacity: 1;
+		}
+		100% {
+			top: 46%;
+		}
+	}
+	&-circle {
+		position: absolute;
+		@include size(inherit, inherit);
+		border: {
+			width: 2px;
+			style: solid;
+			left-color: $primary-color;
+			top-color: transparent;
+			right-color: transparent;
+			bottom-color: transparent;
+			radius: inherit;
+		}
+		animation: run 3s cubic-bezier(0.47, 0.22, 0.91, 0.6);
+		animation-delay: 2.1s;
+	}
+	@keyframes run {
+		0% {
+			transform: rotate(45deg);
+		}
+		20% {
+			transform: rotate(360deg);
+		}
+		60% {
+			transform: rotate(560deg);
+		}
+		100% {
+			transform: rotate(725deg);
+		}
+	}
+}

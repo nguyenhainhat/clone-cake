@@ -1,0 +1,45 @@
+#slider-components {
+	.slider {
+		&-container {
+			min-height: 485px;
+		}
+		@include minWidth(993px) {
+			&-container {
+				width: 1820px;
+			}
+			&-content {
+				padding-left: 1.2rem;
+				margin-left: -3.4rem;
+				width: 35rem;
+			}
+		}
+		@include maxWidth(576px) {
+			&-content {
+				position: relative;
+				top: 80px;
+				h1 {
+					font-size: 6rem;
+				}
+
+				&-sub {
+					opacity: 0;
+					transform: scale(0);
+					transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+				}
+			}
+		}
+	}
+}
+
+#popular-product {
+	.popular {
+		&-carousel {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 3rem 0;
+		}
+		&-img img {
+			height: 240px;
+		}
+	}
+}
